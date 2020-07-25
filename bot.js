@@ -16,32 +16,45 @@ console.log = function(d) { //
 // ---------- LOGGIN FEATURES END ----------
 
 // ---------- FAST ANSWERS END ----------
-bot.on('message', (msg) => {  
-	let text = msg.text
-	if (text =="/start") {
-		console.log("works")
-		var BotStart = true
-		var stage = 1
-		var stageq = 1
+// bot.on('message', (msg) => {  
+// 	let text = msg.text
+// 	if (text =="/start") {
+// 		console.log("works")
+// 		var BotStart = true
+// 		var stage = 1
+// 		var stageq = 1
+// 	}
+// 	var textl = text.length
+// 	if (BotStart == true) {
+// 		bot.sendMessage(msg.chat.id, "Welcome")
+// 		while (stage == 1) {
+
+// 			if (textl > 10) {
+// 				console.log("work")
+// 			}
+// 			if (stageq == 1) {
+
+// 				bot.sendMessage(msg.chat.id, "Welcome2")
+// 				console.log("stageq1");
+
+// 			} 
+// 			var stageq = 0
+
+
+// 		}
+
+// 	}
+// });
+bot.on('message', (msg) => {
+	console.log(msg.text)
+	bot.sendSticker(msg.chat.id, "https://raw.githubusercontent.com/Nikitanikota/telegrambot/master/stickerRaceFoxBlueHi.webp")
+	if (msg.text == "/leave") {
+		bot.setChatPhoto(msg.chat.id, "https://raw.githubusercontent.com/Nikitanikota/telegrambot/master/stickerRaceFoxBlueHi.webp")
+		bot.leaveChat(msg.chat.id)
+		
 	}
-	var textl = text.length
-	if (BotStart == true) {
-		bot.sendMessage(msg.chat.id, "Welcome")
-		while (stage == 1) {
+	
 
-			if (textl > 10) {
-				console.log("work")
-			}
-			if (stageq == 1) {
+		
 
-				bot.sendMessage(msg.chat.id, "Welcome2")
-				console.log("stageq1");
-
-			} 
-			var stageq = 0
-
-
-		}
-
-	}
-});
+})
