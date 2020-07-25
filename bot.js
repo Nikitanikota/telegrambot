@@ -5,6 +5,7 @@ const bot = new TelegramBot(process.env.TELEGRAM_TOKEN, {polling: true});
 // ---------- LOGGIN FEATURES ----------
 var fs = require('fs');
 var util = require('util');
+const { abort } = require('process');
 var log_file = fs.createWriteStream(__dirname + '/debug.log', {flags : 'a'});
 var log_stdout = process.stdout;
 
@@ -23,11 +24,12 @@ bot.on('message', (msg) => {
 		var stage = 1
 		var stageq = 1
 	}
-	console.log();
+	var textl = text.length
 	if (BotStart == true) {
 		bot.sendMessage(msg.chat.id, "Welcome")
 		while (stage == 1) {
-			if (msg.text.toString.length > 10) {
+
+			if (textl > 10) {
 				console.log("work")
 			}
 			if (stageq == 1) {
@@ -43,3 +45,12 @@ bot.on('message', (msg) => {
 
 	}
 });
+// bot.on('message', (msg) => {
+// 	console.log(msg)
+// 	if (msg.text == "hi" || msg.text == "Hi") {
+// 		bot.sendMessage(msg.chat.id, "hi")
+// 	}
+// 	if (msg.text == "love you") {
+// 		bot.sendMessage(msg.chat.id, "love you too")
+// 	}
+// });
