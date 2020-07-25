@@ -45,12 +45,3 @@ bot.on('message', (msg) => {
 
 	}
 });
-// bot.on('message', (msg) => {
-// 	console.log(msg)
-// 	if (msg.text == "hi" || msg.text == "Hi") {
-// 		bot.sendMessage(msg.chat.id, "hi")
-// 	}
-// 	if (msg.text == "love you") {
-// 		bot.sendMessage(msg.chat.id, "love you too")
-// 	}
-// });
